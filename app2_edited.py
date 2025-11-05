@@ -10,15 +10,9 @@ client = OpenAI(api_key=openai_api_key)
 
 print("Running")
 # Biological System
-# model_organism = input("What is your model organism?: ")
-# organ = input("What organ are we analyzing: ")
-# measurement = input("What is the measurement we're performing on our biological system?: ") #rna sequencing, ATAC-sea, RT-qPCR, flow cytometry
-
-model_organism = "mouse"
-organ = "lung"
-measurement = "single-cell RNA seq 10x genomics chromium chip"
-
-
+model_organism = input("What is your model organism?: ")
+organ = input("What organ are we analyzing: ")
+measurement = input("What is the measurement we're performing on our biological system?: ") #rna sequencing, ATAC-sea, RT-qPCR, flow cytometry
 
 
 initial_prompt = f'''You are responsible for generating a detailed experiment protocol.
@@ -142,18 +136,14 @@ Return your answer in the following JSON format:
     }}}}
 '''
 
-
-
-
-materials= {
-    "Collagenase (units)": 5000,
-    "Dispase (units)": 20,
-    "DNase I (units)": 2500,
-    '50micro meter cell strainer': 1,
-    'PBS (ml)': 1000,
-    'BSA (ml)': 10
-}
-
+# materials= {
+#     "Collagenase (units)": 5000,
+#     "Dispase (units)": 20,
+#     "DNase I (units)": 2500,
+#     '50micro meter cell strainer': 1,
+#     'PBS (ml)': 1000,
+#     'BSA (ml)': 10
+# }
 
 # Can't do materials checklist if it's not clear what it's using
 chat_history = [
